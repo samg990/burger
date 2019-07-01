@@ -1,2 +1,26 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+<form>
+<h2>Add a burger:</h2>
+<p>
+    <label for="burgerName"></label></label>
+    <input id="burgerName" type="text">
+</p>
+<button id="addBurger">Submit</button>
+</form>
+
+<h2>Your available burgers:</h2>
+{{#each burgers}}
+<div class="orBurgers" data-uid={{id}}>
+    <h1>{{burgerName}}</h1>
+    <button id='devBurger' data-uid={{id}}>Devour</button>
+</div>
+<hr>
+{{/each}}
+
+<h2>Burgers you've devoured:</h2>
+{{#each eatBurgers}}
+<div class="eatenBurgers" data-uid={{id}}>
+    <h1>{{burgerName}}</h1>
+</div>
+{{/each}}
